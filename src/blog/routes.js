@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const Post = require('./post')
 
-router.get('/', (req, res) => {
-  res.send('dziala');
-});
 
 module.exports = router;
