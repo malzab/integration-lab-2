@@ -13,4 +13,14 @@ router.post('/nowy', async (req, res) => {
   }
 });
 
+router.get('/', async (req, res) => {
+  try {
+    const posts = await Post.findAll();
+    res.json(posts);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Błąd GET');
+  }
+});
+
 module.exports = router;
