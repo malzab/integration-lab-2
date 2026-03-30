@@ -1,4 +1,5 @@
 const express = require('express');
 const app = express();
 
-app.use('/base', baseRoutes);
+const blogSciezki = require('./blog/routes');
+app.use('/blog', blogSciezki);
