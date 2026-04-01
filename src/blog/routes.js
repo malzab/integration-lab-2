@@ -23,4 +23,16 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const posts = await Post.findByPk(id);
+    res.json(posts);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Błąd GET');
+  }
+});
+
 module.exports = router;
